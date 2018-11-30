@@ -1,7 +1,6 @@
-#!/bin/bash
+tissue_of_interest_search_string="Esophagus - Mucosa"
 
 
-tissue_of_interest_search_string="Esophagus - Mucosa" # Searched by grep
 tissue_of_interest=$(echo ${tissue_of_interest_search_string} |sed 's/ //g' | sed 's/\-/_/g')
 
 tmp="181126"
@@ -18,5 +17,4 @@ ExpressionFileGeneCounts="GTEx_Data_20160115_v7_RNAseq_RNASeQCv1.1.8_gene_reads.
 WGSFile="GTEx_Analysis_2016-01-15_v7_WholeGenomeSeq_635Ind_PASS_AB02_GQ20_HETX_MISS15_PLINKQC"  # expecting both *.vcf.gz and *_bplink.{bed,bim,fam} files present
 GenoArrayFile="GTEx_Analysis_20150112_OMNI_2.5M_5M_450Indiv_chr1to22_phased_genot_imput_info04_maf01_HWEp1E6_ConstrVarIDs" # .vcf.gz
 GenoArrayFile_chrX="GTEx_Analysis_20150112_OMNI_2.5M_5M_450Indiv_chrX_genot_imput_info04_maf01_HWEp1E6_ConstrVarIDs" #.vcf.gz
-
 

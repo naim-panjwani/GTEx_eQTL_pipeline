@@ -17,7 +17,7 @@ if [ $num_tissue_types -gt 1 ]; then
    echo "Have more than one tissue type!! Check the ${step01_outputdir}/${tissue_of_interest}_sampleID_attributes.txt file"
    echo "Change search string to one of:"
    cut -f4 ${step01_outputdir}/${tissue_of_interest}_sampleID_attributes.txt |sort |uniq
-   exit
+   exit 1
 fi
 
 num_tissue_samples=$(wc -l ${step01_outputdir}/${tissue_of_interest}_sampleID_attributes.txt |cut -d' ' -f1)
