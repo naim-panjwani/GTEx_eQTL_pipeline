@@ -1,0 +1,6 @@
+Pancreas
+Lung
+Ileum
+Stomach
+Colon - Transverse
+Esophagus - Mucosa

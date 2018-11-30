@@ -14,6 +14,7 @@ join <(sort ${step02_outputdir}/sample_individual_IDs_mapping_file.txt) <(sort $
 (echo -e "Name\nDescription"; cat ${step02_outputdir}/genotyped_RNA_samples.txt) >${step02_outputdir}/gct_columns_to_extract_${tmp}
 if [ ! -e subset_gct.py ]; then  ln -s ~/scripts/subset_gct.py; fi
 python subset_gct.py ${ExpressionDir}/${ExpressionFile} \
+		     ${ExpressionDir}/${ExpressionFileGeneCounts} \
 	             ${step02_outputdir}/gct_columns_to_extract_${tmp} \
 		     ${step02_outputdir}/${ExpressionFile%.gct.gz}_${tissue_of_interest}
 
