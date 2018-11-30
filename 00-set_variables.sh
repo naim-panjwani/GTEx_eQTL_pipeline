@@ -1,4 +1,4 @@
-tissue_of_interest_search_string="Esophagus - Mucosa"
+tissue_of_interest_search_string="Lung"
 
 
 tissue_of_interest=$(echo ${tissue_of_interest_search_string} |sed 's/ //g' | sed 's/\-/_/g')

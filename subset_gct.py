@@ -1,1 +1,1 @@
-/home/naim/scripts/subset_gct.py
+/home/naim/scripts/GTEx_scripts/subset_gct.py
