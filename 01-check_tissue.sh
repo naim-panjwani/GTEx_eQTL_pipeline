@@ -2,12 +2,11 @@
 
 source 00-set_variables.sh
 
-# File/directory checks (work in progress)
+# File/directory checks
 if [ ! -d "${OutputDir}/" ]; then mkdir ${OutputDir}/; fi
 
 # Gather sample ID's for tissue of interest
 echo "Step 01 - Intersecting RNAseq, WGS, and Omni Sample/Individual IDs"
-step01_outputdir="${OutputDir}/01-Intersect_Samples"
 if [ ! -d "$step01_outputdir" ]; then mkdir $step01_outputdir; fi
 #echo "Extracting Sample IDs from sample attributes file for ${tissue_of_interest} to ${step01_outputdir}/${tissue_of_interest}_sampleIDs.txt"
 gunzip -c "${PhenoDir}/${PhenoFile}"  |cut -f2,13-15,17 >${step01_outputdir}/SampleID_and_tissue_Attributes_${tmp}
