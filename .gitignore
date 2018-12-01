@@ -1,3 +1,11 @@
 00-set_variables.sh.bkp
 __pycache__/
 output/
+*vcf
+*vcf.gz
+*tbi
+*bed
+*gz
+*bim
+*fam
+00-set_variables.sh.backup
