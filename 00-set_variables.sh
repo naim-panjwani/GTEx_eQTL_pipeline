@@ -1,4 +1,4 @@
-tissue_of_interest_search_string="Pancreas"
+tissue_of_interest_search_string="Lung"
 
 
 tissue_of_interest=$(echo ${tissue_of_interest_search_string} |sed 's/ //g' | sed 's/\-/_/g')
@@ -14,8 +14,6 @@ SampleAttributesFile="phs000424.v7.pht002743.v7.p2.c1.GTEx_Sample_Attributes.GRU
 #ftp://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs000424/phs000424.v7.p2/pheno_variable_summaries/phs000424.v7.pht002743.v7.GTEx_Sample_Attributes.data_dict.xml
 SubjectPhenotypesFile="phs000424.v7.pht002742.v7.p2.c1.GTEx_Subject_Phenotypes.GRU.txt.gz"
 #ftp://ftp.ncbi.nlm.nih.gov/dbgap/studies/phs000424/phs000424.v7.p2/pheno_variable_summaries/phs000424.v7.pht002742.v7.GTEx_Subject_Phenotypes.data_dict.xml
-SampleAttr_var_ids_file=""
-SubjAttr_var_ids_file=""
 
 ExpressionFile="GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_tpm.gct.gz"
 ExpressionFileGeneCounts="GTEx_Data_20160115_v7_RNAseq_RNASeQCv1.1.8_gene_reads.gct.gz"
@@ -34,9 +32,10 @@ step05_outputdir="${OutputDir}/05-Run_PEER"
 step06_outputdir="${OutputDir}/06-PCA"
 step07_outputdir="${OutputDir}/07-Covariates"
 
-includePCA=true
-includePEER=true
-includeOmni=false
-includeSex=true
-includeAge=false
+# For later versions perhaps:
+#includePCA=true
+#includePEER=true
+#includeOmni=false
+#includeSex=true
+#includeAge=false
 

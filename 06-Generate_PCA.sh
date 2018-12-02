@@ -7,12 +7,14 @@ if [ ! -d "$step06_outputdir" ]; then mkdir $step06_outputdir; fi
 
 ################# Merge the Omni Samples if there are any ##################
 omni_samples=false
-if [ -e ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes_bplink.bed ]; then
-   omni_samples=true
-   echo "Merging WGS and Omni genotypes on common markers"
-   if [ ! -e merge_bplink_files_v3.sh ]; then ln -s ~/scripts/merge_bplink_files_v3.sh; fi
-   bash merge_bplink_files_v3.sh ${step04_outputdir}/${tissue_of_interest}_WGS_genotypes_bplink ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes_bplink ${step06_outputdir}/WGS_Omni_${tissue_of_interest}_merge temp_${tissue_of_interest}_${tmp}
-fi
+#if [ -e ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes_bplink.bed ]; then
+#   omni_samples=true
+#   echo "Merging WGS and Omni genotypes on common markers"
+#   if [ ! -e merge_bplink_files_v3.sh ]; then ln -s ~/scripts/merge_bplink_files_v3.sh; fi
+#   bash merge_bplink_files_v3.sh ${step04_outputdir}/${tissue_of_interest}_WGS_genotypes_bplink ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes_bplink ${step06_outputdir}/WGS_Omni_${tissue_of_interest}_merge temp_${tissue_of_interest}_${tmp}
+#fi
+
+# IF WANT TO INCLUDE OMNI SAMPLES, UNCOMMENT OUT THE ABOVE
 
 genofile=""
 if [ $omni_samples = true ]; then
