@@ -9,3 +9,6 @@ output/
 *bim
 *fam
 00-set_variables.sh.backup
+*out
+*backup
+*bkp
