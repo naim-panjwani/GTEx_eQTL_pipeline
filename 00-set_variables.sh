@@ -24,5 +24,6 @@ step01_outputdir="${OutputDir}/01-Intersect_Samples"
 step02_outputdir="${OutputDir}/02-RNAseq_${tissue_of_interest}_subset"
 step03_outputdir="${OutputDir}/03-Normalized_expression"
 step04_outputdir="${OutputDir}/04-subset_WGS_and_Omni"
-
+step05_outputdir="${OutputDir}/05-Run_PEER"
+step06_outputdir="${OutputDir}/06-PCA"
 

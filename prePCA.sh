@@ -1,0 +1,1 @@
+/home/naim/scripts/prePCA.sh

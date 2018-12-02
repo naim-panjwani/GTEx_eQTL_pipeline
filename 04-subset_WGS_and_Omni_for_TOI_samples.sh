@@ -10,19 +10,22 @@ paste ${step01_outputdir}/${tissue_of_interest}_individual_IDs_intersection_WGS.
 paste ${step01_outputdir}/${tissue_of_interest}_individual_IDs_in_Omni_only.txt ${step01_outputdir}/${tissue_of_interest}_individual_IDs_in_Omni_only.txt >${step04_outputdir}/bplink_keep_file_Omni_${tissue_of_interest}_${tmp}
 
 # Extract with plink:
+echo "Extracting ${tissue_of_interest} individuals with plink"
 plink --bfile ${WGSDir}/${WGSFile}_bplink --keep ${step04_outputdir}/bplink_keep_file_${tissue_of_interest}_${tmp} --make-bed --out ${step04_outputdir}/${tissue_of_interest}_WGS_genotypes_bplink
 plink --bfile ${GenoArrayDir}/${GenoArrayFile}_bplink_iid_update --keep ${step04_outputdir}/bplink_keep_file_Omni_${tissue_of_interest}_${tmp} --make-bed --out ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes_bplink
 
 # Convert to vcf:
+echo "Converting to vcf format"
 plink --bfile ${step04_outputdir}/${tissue_of_interest}_WGS_genotypes_bplink --recode vcf --out ${step04_outputdir}/${tissue_of_interest}_WGS_genotypes
 plink --bfile ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes_bplink --recode vcf --out ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes
 
 # Compress & index:
+echo "Compressing and indexing"
 bgzip ${step04_outputdir}/${tissue_of_interest}_WGS_genotypes.vcf
 tabix -p vcf ${step04_outputdir}/${tissue_of_interest}_WGS_genotypes.vcf.gz
 bgzip ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes.vcf
 tabix -p vcf ${step04_outputdir}/${tissue_of_interest}_Omni_genotypes.vcf.gz
 
-
+echo "Removing temporary files"
 rm ${step04_outputdir}/*${tmp}
 
