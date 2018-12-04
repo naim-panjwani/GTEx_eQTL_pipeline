@@ -12,3 +12,5 @@ output/
 *out
 *backup
 *bkp
+.RData
+.Rhistory

@@ -9,7 +9,7 @@ if [ ! -d "${OutputDir}/" ]; then mkdir ${OutputDir}/; fi
 echo "Step 01 - Intersecting RNAseq, WGS, and Omni Sample/Individual IDs"
 if [ ! -d "$step01_outputdir" ]; then mkdir $step01_outputdir; fi
 #echo "Extracting Sample IDs from sample attributes file for ${tissue_of_interest} to ${step01_outputdir}/${tissue_of_interest}_sampleIDs.txt"
-gunzip -c "${PhenoDir}/${PhenoFile}"  |cut -f2,13-15,17 >${step01_outputdir}/SampleID_and_tissue_Attributes_${tmp}
+gunzip -c "${PhenoDir}/${SampleAttributesFile}"  |cut -f2,13-15,17 >${step01_outputdir}/SampleID_and_tissue_Attributes_${tmp}
 grep "${tissue_of_interest_search_string}" ${step01_outputdir}/SampleID_and_tissue_Attributes_${tmp} >${step01_outputdir}/${tissue_of_interest}_sampleID_attributes.txt
 num_tissue_types=$(cut -f4 ${step01_outputdir}/${tissue_of_interest}_sampleID_attributes.txt |sort |uniq -c |wc -l)
 if [ $num_tissue_types -gt 1 ]; then 

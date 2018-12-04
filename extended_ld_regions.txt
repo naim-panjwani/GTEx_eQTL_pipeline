@@ -1,0 +1,1 @@
+/home/naim/scripts/extended_ld_regions.txt

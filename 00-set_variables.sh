@@ -1,4 +1,4 @@
-tissue_of_interest_search_string="Lung"
+tissue_of_interest_search_string="Colon - Transverse"
 
 
 tissue_of_interest=$(echo ${tissue_of_interest_search_string} |sed 's/ //g' | sed 's/\-/_/g')
@@ -31,6 +31,7 @@ step04_outputdir="${OutputDir}/04-subset_WGS_and_Omni"
 step05_outputdir="${OutputDir}/05-Run_PEER"
 step06_outputdir="${OutputDir}/06-PCA"
 step07_outputdir="${OutputDir}/07-Covariates"
+step08_outputdir="${OutputDir}/08-FastQTL_results"
 
 # For later versions perhaps:
 #includePCA=true

@@ -3,11 +3,12 @@
 source 00-set_variables.sh
 if [ ! -d "$step03_outputdir" ]; then mkdir $step03_outputdir; fi
 
+# replace with $WGSFile with merged file if you want omni samples
 if [ ! -e normalize_expression.py ]; then ln -s ~/scripts/GTEx_scripts/normalize_expression.py; fi
 python normalize_expression.py ${step02_outputdir}/${ExpressionFile%.gct.gz}_${tissue_of_interest}.gz \
 			       ${step02_outputdir}/${ExpressionFile%.gct.gz}_${tissue_of_interest}_reads.gz \
 			       ${GENCODE_annotationFile} \
-			       ${WGSDir}/${WGSFile}.vcf.gz \  # replace with merged file if want omni samples
+			       ${WGSDir}/${WGSFile}.vcf.gz \
 			       ${ExpressionFile%.gct.gz}_${tissue_of_interest}_normalized \
 			       --output_dir=$step03_outputdir \
 			       --expression_threshold=0.1 \

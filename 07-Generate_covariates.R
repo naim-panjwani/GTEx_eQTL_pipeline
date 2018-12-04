@@ -36,12 +36,12 @@ if((nrow(pca) != nrow(fam)) | (nrow(peers) != nrow(fam))) {
   warning("PEER factors sample size differs from fam file input")
 }
 
-x1 <- merge(fam[,2,with=F], covariates, by.x="V2", by.y="SUBJID", all.x=T)
+x1 <- merge(fam[,2,with=F], covariates, by.x="V2", by.y="SUBJID", all.x=T, sort=F)
 colnames(x1)[1] <- "IID"
-x2 <- merge(x1, pca, by="IID", all.x=T)
-x3 <- merge(x2, peers, by.x="IID", by.y="ID", all.x=T)
+x2 <- merge(x1, pca, by="IID", all.x=T, sort=F)
+x3 <- merge(x2, peers, by.x="IID", by.y="ID", all.x=T, sort=F)
 
 final_covars <- transpose_extra(x3)
 
-write.table(final_covars, outfilename, quote=F, row.names=F. col.names=T, sep="\t")
+write.table(final_covars, argv$outfilename, quote=F, row.names=F, col.names=T, sep="\t")
 
