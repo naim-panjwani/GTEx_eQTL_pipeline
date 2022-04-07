@@ -1,4 +1,4 @@
-# GTEx_eQTL_pipeline
+# GTEx eQTL pipeline
 
 This repository analyzes eQTLs for brain and nerve tissues per sex using the [GTEx eQTL pipeline](https://github.com/broadinstitute/gtex-pipeline/tree/master/qtl) docker image.  
 
