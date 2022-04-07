@@ -20,5 +20,5 @@ eQTL analyses were adjusted for:
   - Sequencing platform (Illumina HiSeq 2000 or HiSeq X).  
   - Sequencing protocol (PCR-based or PCR-free).  
   - Sex. Although this was dropped by `combined_covariates.py` due to collinearity (since each subset is one sex).  
-  - Age (note: this is adjusted for in the public analyses).  
+  - Age (note: this is *not* adjusted for in the public analyses).  
 
