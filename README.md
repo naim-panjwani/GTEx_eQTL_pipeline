@@ -7,7 +7,7 @@ This repository analyzes eQTLs for brain and nerve tissues per sex using the [GT
 
 `00-setup.sh` should be run first to setup folders, symbolic links and cleaner covariate files, PLINK files, etc.
 
-`phenotypes_eda.ipynb` shows the reasoning on how to list out the tissue sample ID's per brain and tibial nerve tissues and per sex
+`phenotypes_eda.ipynb` shows the reasoning on how to list out the tissue sample ID's per brain and tibial nerve tissues and per sex. Due to the sensitive nature of the data, the outputs have been cleared. 
 
 `01-run_eqtl_pipeline.sh` goes through the [GTEx eQTL pipeline](https://github.com/broadinstitute/gtex-pipeline/tree/master/qtl) as closely as possible for the sample subsets that were generated in `phenotypes_eda.ipynb` step
 
